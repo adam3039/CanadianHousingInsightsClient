@@ -1,0 +1,15 @@
+﻿
+<div class="new-comment">
+    <div class="row">
+        <div class="col-sm-8">
+            <textarea class="comment-textarea" placeholder="Enter your comment here." [(ngModel)]="comment"></textarea>
+        </div>
+        <div class="col-sm-4">
+            <div class="submit-comment-btn-container" (click)="submitNewComment()">
+                <div class="submit-comment-btn">
+                    <div [inlineSVG]="'assets/icons/_SubmitCommentIcon.svg'"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

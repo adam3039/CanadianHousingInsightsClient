@@ -1,0 +1,13 @@
+<div class="city-popup-header">
+  <button id="city-popup-close-btn" class="city-popup-close-btn" onclick="window.angularComponentRef.zone.run(function () { window.angularComponentRef.componentFn()})"><i class="fa fa-close"></i></button>
+<div class="city-popup-image">
+  <div [inlineSVG]="'assets/icons/_MapPointer.svg'"></div>
+</div>
+<div>
+  <div>CITY: {{popupInfo.cityName}}</div>
+  <div>PROVINCE: {{popupInfo.provinceName}}</div>
+</div>
+</div>
+<div class="city-popup-footer">
+  <button #viewStatsBtn class="btn-statistics">VIEW STATISTICS</button>
+</div>

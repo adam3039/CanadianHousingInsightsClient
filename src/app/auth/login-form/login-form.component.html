@@ -1,0 +1,57 @@
+﻿<div id="login">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <form #f="ngForm" novalidate (ngSubmit)="login(f)">
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="icon">
+                                <div [inlineSVG]="'../../assets/icons/_UsernameIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="username" type="text" required name="username" [ngModel]="credentials.username" #username="ngModel" tmFocus class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="icon">
+                                <div [inlineSVG]="'../../assets/icons/_PasswordIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="password" type="password" required name="password" [ngModel]="credentials.password" class="form-control" placeholder="Password" ngModel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="remember-check">
+                        <input type="checkbox" id="RememberMe" name="checkbox" />
+                        <label for="RememberMe">Remember Me</label>
+                    </div>
+                    <div class="remember-label">
+                        Remember Me
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row" id="login-submit">
+                        <div class="col-sm-12">
+                            <div id="login-icon">
+                                <div [inlineSVG]="'../../assets/icons/_LoginIcon.svg'"></div>
+                            </div>
+                            <button type="submit" class="btn btn-default" [disabled]="f.invalid || isRequesting">Log in</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="errors" class="alert alert-danger" role="alert">
+                    <strong>Oops!</strong> {{errors}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

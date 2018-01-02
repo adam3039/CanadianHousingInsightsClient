@@ -1,0 +1,31 @@
+﻿<ngx-loading [show]="!statsLoaded" [config]="{backdropBackgroundColour: 'rgba(14,8,8)'}"></ngx-loading>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ui-inputgroup">
+                <span [ngClass]="nationalActive ? 'ui-inputgroup-addon active' : 'ui-inputgroup-addon'"><span [inlineSVG]="'assets/icons/_NationalIcon.svg'"></span></span>
+                <p-toggleButton (onChange)="onNationalChange()" [(ngModel)]="nationalActive" onLabel="NATIONAL" offLabel="NATIONAL"></p-toggleButton>
+            </div>
+            <div class="ui-inputgroup">
+                <span [ngClass]="provincialActive ? 'ui-inputgroup-addon active' : 'ui-inputgroup-addon'"><span [inlineSVG]="'assets/icons/_ProvinceIcon.svg'"></span></span>
+                <p-dropdown [ngClass]="provincialActive ? 'active':''" [options]="provinces" [(ngModel)]="selectedProvince" (onChange)="onProvinceChange()" placeholder="PROVINCE" optionField="name"></p-dropdown>
+            </div>
+                <div *ngIf="provincialActive" class="ui-inputgroup">
+                    <span [ngClass]="localActive ? 'ui-inputgroup-addon active' : 'ui-inputgroup-addon'"><span [inlineSVG]="'assets/icons/_CityIcon.svg'"></span></span>
+                    <p-dropdown [ngClass]="localActive ? 'active':''" (onChange)="onCityChange()" [options]="cities" [(ngModel)]="selectedCity" placeholder="CITY" optionField="name"></p-dropdown>
+                </div>
+            <div *ngIf="nationalActive || provincialActive;">
+                <hr />
+                <div class="ui-inputgroup">
+                    <p-dropdown [ngClass]="statActive ? 'active stats-dropdown':'stats-dropdown'" (onChange)="onPrimaryStatChange()" [options]="statOptions" [(ngModel)]="selectedStat" placeholder="SELECT STATISTIC" optionField="name"></p-dropdown>
+                </div>
+                <hr />
+            </div>
+            <div *ngIf="showChildStat && statActive">
+                <div class="ui-inputgroup">
+                    <p-dropdown [ngClass]="childStatActive ? 'active stats-dropdown':'stats-dropdown'" (onChange)="onChildStatChange()" [options]="childStatOptions" [(ngModel)]="selectedChildStat" placeholder="SELECT STATISTIC" optionField="name"></p-dropdown>
+                </div>
+            </div>
+        </div>     
+    </div>
+</div>

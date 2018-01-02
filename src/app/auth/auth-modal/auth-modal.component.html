@@ -1,0 +1,7 @@
+﻿<div id="auth-modal">
+    <p-dialog [showHeader]="false" [(visible)]="display" (onHide)="onHide()" [modal]="true" [dismissableMask]="true" [resizable]="false">
+
+        <p-tabMenu [model]="menuItems"></p-tabMenu>
+        <router-outlet></router-outlet>
+    </p-dialog>
+</div>

@@ -1,0 +1,75 @@
+﻿<div id="register">
+    <div class="row">
+        <div class="col-sm-12">
+            
+            <form #f="ngForm" novalidate (ngSubmit)="registerUser(f)">
+                
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="register-icon">
+                                <div [inlineSVG]="'../../assets/icons/_UsernameIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="username" type="text" required name="username" tmFocus class="form-control" placeholder="Username">
+                            </div>
+                        </div>
+                    </div>                   
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="register-icon">
+                                <div [inlineSVG]="'../../assets/icons/_EmailIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="email" type="text" required name="email" validateEmail class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>                 <!--<small [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Please enter a valid email</small>-->
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="register-icon">
+                                <div [inlineSVG]="'../../assets/icons/_PasswordIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="password" type="password" required name="password" class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>            
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="register-icon">
+                                <div [inlineSVG]="'../../assets/icons/_PasswordIcon.svg'"></div>
+                            </div>
+                            <div class="text-input">
+                                <input id="confirmPassword" type="password" required name="confirmPassword" class="form-control" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row" id="register-submit">
+                        <div class="col-sm-12">
+                            <div class="register-icon submit-icon">
+                                <div [inlineSVG]="'../../assets/icons/_RegisterIcon.svg'"></div>
+                            </div>
+                            <button type="submit" class="btn btn-default" [disabled]="f.invalid || isRequesting">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="errors" class="alert alert-danger" role="alert">
+                    <strong>Oops!</strong> {{errors}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

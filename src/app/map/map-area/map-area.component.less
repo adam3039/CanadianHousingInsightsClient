@@ -1,0 +1,107 @@
+﻿.map-area {
+    background-color: #191A1A;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 300px;
+    bottom: 0;
+    -moz-transition: right 0.5s ease;
+    transition: right 0.5s ease;
+}
+
+#map {
+    height:100%;
+    width:100%;
+}
+
+.full-screen{
+    right:0;
+}
+
+.prairieapps-wordmark {
+    position: absolute;
+    display: block;
+    height: 60px;
+    width: 115px;
+    left: 0px;
+    bottom: 0px;
+    text-indent: -9999px;
+    z-index: 999999;
+    overflow: hidden;
+    background-image: url(../../../assets/images/logos/badge.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 115px 60px;
+}
+
+.mapboxgl-popup-content {
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.city-popup-header {
+    width: 25rem;
+    padding: 1rem 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(25, 25, 25, 0.75);
+}
+
+.city-popup-close-btn {
+    border: none;
+    background: transparent;
+    margin: .5rem 0rem;
+    float: right;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+}
+
+.btn-statistics {
+    width: 70%;
+    background-color: #ac0202;
+    border-style: none;
+    padding: 1rem;
+}
+
+.btn-statistics:after {
+    font-family: 'FontAwesome';
+    content: "\f178";
+    padding-left: 1rem;
+}
+
+.city-popup-image {
+    height: 4rem;
+    background-repeat: no-repeat;
+    float: left;
+    width: 4rem;
+    background-color: rgba(32, 32, 32, 0.75);
+    border-radius: 4rem;
+    margin-right: 2rem;
+    text-align: center;
+}
+
+.city-popup-footer {
+    text-align: center;
+}

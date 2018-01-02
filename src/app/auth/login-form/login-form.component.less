@@ -1,0 +1,124 @@
+﻿#login .text-input {
+    padding-left: 0;
+    width: 80%;
+    float: left;
+}
+
+#login .text-input input {
+    letter-spacing: 2px;
+    font-size: 11px;
+    height: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+#login input[type='checkbox'] {
+    opacity: 0;
+    z-index: -1;
+}
+
+#login input[type='checkbox'] + label {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    text-indent: -999px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+#login input[type='checkbox']#RememberMe + label {
+    border: 1px solid #fff;
+    background: transparent;
+    transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+}
+
+#login input[type='checkbox']#RememberMe:checked + label {
+    border: 5px solid #fff;
+    background: #C80000;
+}
+
+#login .remember-check {
+    float: left;
+    margin-top: 7px;
+    margin-left: 0.7em;
+}
+#login #RememberMe{
+    display: none !important;
+}
+#login .remember-label {
+    float: left;
+    margin-top: 0.78em;
+    margin-left: 0.6em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+}
+
+#login .form-group {
+    margin-bottom: .8em;
+}
+
+#login {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 1em;
+}
+
+#login a {
+    color: white;
+    font-size: 11px;
+}
+
+#login p {
+    margin-bottom: 0;
+}
+
+#login span {
+    font-size: 11px;
+    color: white;
+}
+#login button {
+    width: 80%;
+    float: left;
+    background-color: #C80000 !important;
+    border: none !important;
+    border-radius: 3px !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    text-transform: uppercase;
+    color: white !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    height: 40px;
+    letter-spacing: 2px;
+}
+#login .icon {
+
+    height: 40px;
+    margin-right: .5em;
+    width: 34px;
+    padding: .5em;
+    float: left;
+}
+#login-icon {
+    background-color: #C80000;
+    height: 40px;
+    margin-left: .5em;
+    width: 40px;
+    padding-left: 0.15em;
+    padding-top: 0.4em;
+    float: left;
+    border-right: solid 1px #0D0808;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+#login-submit {
+    margin-top: 6em;
+}

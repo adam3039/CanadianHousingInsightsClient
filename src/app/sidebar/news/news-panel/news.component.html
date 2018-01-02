@@ -1,0 +1,6 @@
+﻿<ul>
+    <ngx-loading [show]="loading"></ngx-loading>
+    <li *ngFor="let article of articles">
+        <app-news-article [article]="article"></app-news-article>
+    </li>
+</ul>

@@ -1,0 +1,71 @@
+﻿<div *ngIf="article" class="article">
+    <input type="hidden" name="ArticleId" value="{{article.id}}" />
+    <div class="information-section">
+        <a href="{{article.url}}" target="_blank">
+            <div class="article-title">
+                <h3>{{article.title}}</h3>
+                <div class="news-article-arrow" [inlineSVG]="'assets/icons/_ArrowRightNews.svg'"></div>
+            </div>
+        </a>
+        <div class="date-line">
+            <h4>{{article.publishedOn | date}}</h4>
+        </div>
+        <div class="summary">
+            <p>{{article.description}}</p>
+            
+        </div>
+    </div>
+    <div class="buttons">
+        <div *ngIf="!article.userVoted; then default; else upOrDown"></div>
+        <ng-template #default>
+            <div class="outer up" (click)="upvoteClick(article)">
+                <div class="inner" [inlineSVG]="'assets/icons/_Upvote.svg'"></div><span class="count">{{article.upvote}}</span>
+            </div>
+            <div class="outer down" (click)="downvoteClick(article)">
+                <div class="inner" [inlineSVG]="'assets/icons/_Downvote.svg'"></div><span class="count">{{article.downvote}}</span>
+            </div>
+        </ng-template>
+        <ng-template #upOrDown>
+            <div *ngIf="article.userUpvoted; then upvote; else downvote"></div>
+            <ng-template #upvote>
+                <div class="upvote outer" (click)="upvoteClick(article)">
+                    <div class="inner" [inlineSVG]="'assets/icons/_Upvote.svg'"></div><span class="count">{{article.upvote}}</span>
+                </div>
+                <div class="outer down" (click)="downvoteClick(article)">
+                    <div class="inner" [inlineSVG]="'assets/icons/_Downvote.svg'"></div><span class="count">{{article.downvote}}</span>
+                </div>
+            </ng-template>
+            <ng-template #downvote>
+                <div class="outer up" (click)="upvoteClick(article)">
+                    <div class="inner" [inlineSVG]="'assets/icons/_Upvote.svg'"></div><span class="count">{{article.upvote}}</span>
+                </div>
+                <div class="downvote outer" (click)="downvoteClick(article)">
+                    <div class="inner" [inlineSVG]="'assets/icons/_Downvote.svg'"></div><span class="count">{{article.downvote}}</span>
+                </div>
+            </ng-template>
+        </ng-template>
+
+        
+        <div class="all-comments outer" (click)="allCommentsClick(article)">
+            <div *ngIf="!loading">
+                <div class="standard inner" [inlineSVG]="'assets/icons/_CommentsIconNews.svg'"></div>
+                <span class="count" >{{article.comments.length}}</span>
+            </div>
+            <div class="loader-container" *ngIf="loading"><ngx-loading [show]="loading" [config]="{primaryColour: '#0D0808', secondaryColour: '#0D0808', tertiaryColour: '#0D0808'}"></ngx-loading></div>
+        </div>
+        <div class="new-comment outer" (click)="newCommentClick(article)">
+            <div class="loader inner" [inlineSVG]="'assets/icons/spinner.svg'"></div>
+            <div class="standard inner" [inlineSVG]="'assets/icons/_NewCommentNews.svg'"></div>
+        </div>
+    </div>
+</div>
+<div *ngIf="newCommentClicked">
+    <app-new-comment [article]="article" (close)="closeNewComment()" (newComment)="incrementComment($event)"></app-new-comment>
+</div>
+<perfect-scrollbar>
+    <ul class="all-comments-list">
+        <li *ngFor="let comment of comments">
+            <app-comments [comment]="comment"></app-comments>
+        </li>
+    </ul>
+</perfect-scrollbar>

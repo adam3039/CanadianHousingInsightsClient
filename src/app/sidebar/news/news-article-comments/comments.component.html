@@ -1,0 +1,41 @@
+﻿<div *ngIf="comment" class="comment">
+    <input type="hidden" name="CommentId" value="{{comment.id}}" />
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div *ngIf="!comment.userVoted; then default; else voted"></div>
+                <ng-template #default>
+                    <div class="col-sm-12">
+                        <div class="comment-upvote" (click)="upvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Upvote.svg'"></div></div>
+                        <div class="comment-downvote" (click)="downvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Downvote.svg'"></div></div>
+                        <span class="username">{{comment.user.userName}}</span><span class="comment-age">{{comment.publishedOn | date}}</span>
+                    </div>
+                </ng-template>
+                <ng-template #voted>
+                    <div *ngIf="comment.userUpvoted; then upvote; else downvote"></div>
+                    <ng-template #upvote>
+                        <div class="col-sm-12">
+                            <div class="comment-upvote active" (click)="upvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Upvote.svg'"></div></div>
+                            <div class="comment-downvote" (click)="downvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Downvote.svg'"></div></div>
+                            <span class="username">{{comment.user.userName}}</span><span class="comment-age">{{comment.publishedOn | date}}</span>
+                        </div>
+                    </ng-template>
+                    <ng-template #downvote>
+                        <div class="col-sm-12">
+                            <div class="comment-upvote" (click)="upvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Upvote.svg'"></div></div>
+                            <div class="comment-downvote active" (click)="downvoteClick(comment)"><div [inlineSVG]="'assets/icons/_Downvote.svg'"></div></div>
+                            <span class="username">{{comment.user.userName}}</span><span class="comment-age">{{comment.publishedOn | date}}</span>
+                        </div>
+                    </ng-template>
+                </ng-template>
+            
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="comment-body">{{comment.comment}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      

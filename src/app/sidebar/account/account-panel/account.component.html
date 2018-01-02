@@ -1,0 +1,33 @@
+﻿<div id="account-panel-inner">
+    <ngx-loading [show]="loading"></ngx-loading>
+    <div *ngIf="userInfo" id="profile" class="row">
+        <div id="account-profile-icon" class="col-sm-12">
+            <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        </div>
+        <div class="col-sm-12"><h5>logged in as:</h5></div>
+        <div class="col-sm-12">
+            <p>{{userInfo.userName}}</p>
+        </div>
+        <form #f="ngForm" novalidate (ngSubmit)="logout()" id="logoutForm">
+            <ul>
+                <li>
+                    <button type="submit">Log out  <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                </li>
+            </ul>
+        </form>
+        <div class="col-sm-12">
+            <span>-</span> <a id="change-password-link" (click)="changePassword()">Change Password</a> <span>-</span>
+        </div>
+    </div>
+    <hr />
+    <!--<div id="recent-comments">
+        <div class="recent-comments-simplebar">
+            <div class="account-panel-recent-comment">
+                <p class="account-panel-article-title">{{articleTitle}}</p>
+                <span>"</span><span class="account-panel-comment-body">{{comment}}</span><span>"</span>
+            </div>
+        </div>
+        <p>No comments added</p>
+        <button (click)="goToRecentNews()" id="view-recent-news-btn">View Recent News</button>
+    </div>-->
+</div>

@@ -1,0 +1,21 @@
+﻿<div class='navbar navbar-inverse navbar-fixed-top'>
+    <div class='navbar-header'>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-buttons-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class='navbar-brand' [routerLink]="['/home']"><img class="img-responsive" src="assets/images/logos/navbar-logo.png" /></a>
+    </div>
+    <div class="collapse navbar-collapse" id="nav-buttons-collapse">
+        <ul [ngClass]="active ? 'nav navbar-nav navbar-right navbar-active' : 'nav navbar-nav navbar-right'">
+            <li [ngClass]="activePage('/news')"><a routerLink="/news"><div [inlineSVG]="'assets/icons/_NewsIcon.svg'"></div></a></li>
+            <li [ngClass]="activePage('/stats')"><a routerLink="/stats"><div [inlineSVG]="'assets/icons/_StatsIcon.svg'"></div></a></li>
+            <li [ngClass]="activePage('/account')"><a routerLink="/account"><div [inlineSVG]="'assets/icons/_SettingsIcon.svg'"></div></a></li>
+            <li (click)="sidePanelToggleClicked()">
+                <div [inlineSVG]="active ? 'assets/icons/_ArrowRightIcon.svg' : 'assets/icons/_ArrowLeftIcon.svg' "></div>
+            </li>
+        </ul>
+    </div>
+</div>
