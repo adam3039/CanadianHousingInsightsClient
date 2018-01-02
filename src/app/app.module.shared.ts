@@ -46,6 +46,7 @@ import { UserService } from './services/user.service';
 import { ChartComponent } from './charts/chart.component';
 import { HttpClient } from '@angular/common/http';
 import { Renderer2 } from '@angular/core';
+import { RecentCommentsComponent } from './sidebar/account/account-panel/recent-comments/recent-comments.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -65,7 +66,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         CommentsComponent,
         NewCommentComponent,
         ChartComponent,
-        ChangePasswordComponent
+        ChangePasswordComponent,
+        RecentCommentsComponent
     ],
     entryComponents: [MapPopupComponent],
     imports: [

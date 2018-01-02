@@ -27,8 +27,8 @@ export class NewsArticleComponent {
     private upvoteClicked: boolean;
     private downvoteClicked: boolean;
     private allCommentsClicked: boolean;
-    private newCommentClicked: boolean;
-    private comments: ArticleComment[];
+    newCommentClicked: boolean;
+    comments: ArticleComment[];
     private userVotes: CommentUserVote[];
     public loading = false;
 

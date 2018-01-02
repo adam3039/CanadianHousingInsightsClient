@@ -12,7 +12,7 @@ import { ChartData } from '../models/stats/chart-data';
 })
 export class ChartComponent {
 
-    private display = false;
+    display = false;
     private scope: string;
     private statId: number;
     private cityId: number;
